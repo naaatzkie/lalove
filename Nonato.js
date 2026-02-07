@@ -2,6 +2,7 @@ const yesBtn = document.getElementById('yesBtn');
 const noBtn = document.getElementById('noBtn');
 const gif = document.getElementById('gif');
 const question = document.getElementById('question');
+yesBtn.classList.add('pulse-animation');
 
 const messages = [
     "Sure ka???",
@@ -37,10 +38,19 @@ noBtn.addEventListener('mouseover', () => {
 yesBtn.addEventListener('click', () => {
     question.innerHTML = "Yeheyyyyy date ta sa 14 :> ❤️";
     gif.src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp1amZ4Z3R3bm9kZ3ZueGZpZzB6Z3R3bm9kZ3ZueGZpZzB6Z3R3JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCBmYWN0b3J5/MDJ9IbxxvDUQM/giphy.gif";
-    
+    document.getElementById('extra-message').style.display = 'block';
     noBtn.style.display = 'none';
     setInterval(createHeart, 150);
     yesBtn.style.transform = 'scale(1.2)';
+    noBtn.style.display = 'none';
+    yesBtn.style.display = 'none';
+
+    confetti({
+    particleCount: 150,
+    spread: 70,
+    origin: { y: 0.6 }
+});
+
 });
 
 function createHeart() {
