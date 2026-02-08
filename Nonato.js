@@ -17,8 +17,10 @@ const messages = [
     "Bawal mu NO geatay"
 ];
 
+
 let messageIndex = 0;
 let yesScale = 1.2;
+let noCount = 0;
 noBtn.addEventListener('mouseover', () => {
     const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
     const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
@@ -29,6 +31,10 @@ noBtn.addEventListener('mouseover', () => {
     noBtn.innerText = messages[messageIndex];
     messageIndex = (messageIndex + 1) % messages.length;
 
+    if (noCount >= 5) {
+        question.innerHTML = "Ayaw lagi pag NO :<";
+    }
+    noCount++;
     yesScale += 0.15;
     yesBtn.style.transform = `scale(${yesScale})`;
     
@@ -52,6 +58,7 @@ yesBtn.addEventListener('click', () => {
 });
 
 });
+
 
 function createHeart() {
     const heart = document.createElement('div');
