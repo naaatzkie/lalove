@@ -7,6 +7,15 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     overflow: hidden;
+    background: linear-gradient(45deg, #ffdee9, #b5fffc);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 @keyframes pulse {
@@ -66,8 +75,15 @@ button {
 }
 
 #yesBtn {
-    background-color: #4CAF50;
-    color: white;
+    box-shadow: 0 10px 20px rgba(255, 77, 109, 0.3);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#yesBtn:hover {
+    box-shadow: 0 15px 30px rgba(255, 77, 109, 0.5);
+    filter: brightness(1.1);
 }
 
 #noBtn {
